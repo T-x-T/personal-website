@@ -1,9 +1,87 @@
 <!-- $&title:My Gaming PC is a VM&$ -->
 <article>
 	<h2>My Gaming PC is a VM</h2>
-	<p>Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! </p>
-	<p>Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! </p>
-	<p>Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! </p>
-	<p>Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! </p>
-	<p>Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! </p>
+	<p>Virtualization of computers isn't really a new concept. In fact, it's almost as old as computers themselves. From what I could find on the internet it dates back to at least 1967.</p>
+	<p>Well, after all that time virtualization made it all the way from mainframes right to my desktop!</p>
+	<p>But before I start telling you about how my gaming PC is just a virtual machine, I need to go back in time by a few years.</p>
+	<br>
+
+	<h3>My NAS evolution</h3>
+	<p>Back in simpler times I thought to myself: "Why don't I build my own NAS?"</p>
+	<p>And thus a great journey started with me throwing together a few old computer parts, four 4TB HDDs and a copy of Freenas (now known as <a href="https://www.truenas.com/" target="_blank">Truenas</a>)</p>
+	<p>
+		It didn't take long until I also wanted to run a few virtual machines. Freenas did support those, but it wasn't the best experience. At the time I also got access to a windows server datacenter license through school.
+		This got me to install windows server on the bare metal, with freenas running inside a VM, with all the HDDs passed through. With the datacenter license you also essentially get unlimited windows server VMs licensed for free, which was pretty nice for playing around.
+	</p>
+	<p>
+		But of course hyper-v got old pretty fast, so I moved to another hypervisor: vmware ESXi. It at least felt a lot better as it's purpose made and not just some functionality "tacked on" (at least that's how hyper-v always feels to me)
+		Another benefit was that we also use ESXi at work, so I got to play a little bit around without having to worry about breaking things.
+		This turned out to be less helpful than I initially thought as the ESXi interface differs quite a lot from vsphere, the piece of software that controls our cluster of multiple ESXi hosts.
+	</p>
+	<p>
+		Eventually I royally f'ed up by creating a datastore that used storage from my freenas VM. Using storage supplied by a VM for a datastore is a <i>really</i> bad idea as I learned after the next restart!
+		I'm not sure anymore how I managed to get myself out of that situation. What I do know is that it didn't take long after that incident to search for a new alternative again. 
+	</p>
+	<p>
+		Introducing <a href="https://unraid.net/" target="_blank">unraid</a>: A NAS operating system featuring better virtualization support, as well as the capability of running docker containers! There even is a huge marketplace offering prepacked software.
+		What really got me hooked was it's ease of use. With some IT knowledge you can easily set up a functioning NAS that does more than just store files.
+	</p>
+	<p>I was finally happy with this solution for multiple years.</p>
+	<p>
+		There was always one thing I didn't quite enjoy about unraid however: It's performance. See, unraid sets itself apart with a special kind of raid. Instead of striping data across multiple drives, it "manually" distributes whole files between your drives.
+		Your data is then kept save using one or two parity drives that only parity information. This approach means that in the case of a fatal number of drive failures only data from failed drives is lost, instead of all data stored on the array.
+		On the flip side, its also slower as files are only ever written and read from single drives, instead of using multiple drives at once.
+		I also had my HDDs spin down after a time of inactivity for noise reasons. This meant that the first access to a HDD always took ages as the drive first needed to spin up.
+	</p>
+	<p>
+		Browsing around on ebay, as one does, I found some incredible deals around used enterprise grade SSDs. The specific ones I was interested in where 8TB u.2 SSDs. The u.2 form factor is really interesting, because it allows for NVME SSDs to fit in 2.5" drive slots.
+		All you need is a HBA PCIe Card that supports u.2 or a little adapter that literally just splits up a x16 PCIe slot into four x4 u.2 connections.
+	</p>
+	<p>I often heard bad things about unraid running on purely SSD storage and I also wanted something new again.</p>
+	<p>
+		This time I had the idea of combining my PC and NAS into a single machine. This really makes a lot of sense if you think about it. My PC is quite powerful with an AMD Ryzen 5950x 16 core processor and 64GB of RAM.
+		That should be plenty of room for some VMs.
+	</p>
+	<br>
+
+	<h3>My PC evolution</h3>
+	<p>Of course while my NAS evolved over time, my PC did too.</p>
+	<p>
+		At some point I decided that I wanted to try this Linux thing as my main operating system. I was actively trying to make youtube videos during that time and my (at the time) favorite video editing program Adobe Premiere Pro of course doesn't run on Linux.
+		This caused me to dual boot, first just for Adobe stuff, but later I used windows more and more again, due to some small random issues I had with my Linux install.
+	</p>
+	<p>
+		Some time later I tried Linux again, first with <a href="https://pop.system76.com/" target="_blank">Pop!_OS</a> again and later with <a href="https://archlinux.org/">Arch</a>.
+		During this second try I also stopped making youtube videos, so I didn't need to dual boot for windows anymore! That first Arch install is actually what I am still using daily 2.5 years later!
+	</p>
+	<p>
+		My streak of gaming on Linux was only broken by my desire to play Forza Horizon after I saw how well it ran on the steam deck. Critically, the steam deck uses an AMD GPU while I have one from nvidia, which seems to be a problem for Forza specifically.
+		I tried many things, but eventually I stumbled over something I hadn't previously considered. Running a windows VM with GPU passthrough. Well I thought about it earlier, but heard that you need a separate GPU for passthrough, which I don't have.
+		This time however I found out that you don't actually <i>need</i> a second GPU. You can actually just kill your desktop session and unload the graphics driver from the host operating system before starting the VM!
+		One afternoon of trying my best to follow this <a href="https://github.com/Marrca35/Single-GPU-Passthrough-for-Arch-Linux" target="_blank">guide</a> later I was up and running with a windows VM that really <i>felt</i> like a bare metal machine.
+	</p>
+	<br>
+
+	<h3>My current setup</h3>
+	<p>With all the knowledge gained about virtualization under Linux I felt more comfortable combining my PC and NAS into a single machine.</p>
+	<p>
+		As the hypervisor I chose something completely new to me: <a href="https://proxmox.com/en/proxmox-virtual-environment/overview">Proxmox</a>!
+		It's a fully featured, Linux based hypervisor that's also using KVM just like my windows gaming VM setup.
+	</p>
+	<p>
+		I then created a couple VMs for running: Truenas as my NAS again, OPNsense as a router/firewall and a docker one for running different containers.
+		And then there are two more VMs with GPU passthrough configured: One with windows, and one with Linux. They also have all USB controllers, Audio interfaces and the WiFi Card (for bluetooth) passed through as well.  
+	</p>
+	<p>
+		One issue I knew I was going to run into, was starting the VM I wanted to use. Without a VM to interact with this was not very easy. My first solution was to use an unofficial Proxmox App on my phone.
+		It wasn't as user friendly as I wanted it to be however. My second solution was much cooler and is also what I still rely on: The iOS shortcuts app. It's a really powerful app allowing you to automate your iPhone.
+		One of the many things it can do is send ssh commands to other hosts on your network, which I used to create a shortcut that sends a start VM command via ssh to my Proxmox server.
+	</p>
+	<br>
+
+	<h3>Conclusion</h3>
+	<p>
+		It's actually really cool how you don't realize that you're "only" interacting with a VM when just using it normally. This setup also removes some of the potential issues of dual-booting, like windows update messing with GRUB.
+		And of course I now only have one physical tower taking up valuable space.
+	</p>
 </article>

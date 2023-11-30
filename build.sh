@@ -18,7 +18,6 @@ for filename in src/* src/**/*; do
 			if [[ $comment =~ title:(.*) ]]; then
 				title="${BASH_REMATCH[1]} - TxTs website"
 				titled_header="${header//$&title&$/$title}"
-				echo "$titled_header"
 			fi
 		done <<< "$properties"
 
