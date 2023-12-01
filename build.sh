@@ -14,14 +14,20 @@ for filename in src/* src/**/*; do
 		comments=$(grep -oP "(?<=<\!\--\s)(.*?)(?=\s-->)" <<< "$content")
 		properties=$(grep -oP "(?<=\\$&)(.*?)(?=&\\$)" <<< "$comments")
 
+		finished_header="$header"
+
 		while read -r comment; do
 			if [[ $comment =~ title:(.*) ]]; then
 				title="${BASH_REMATCH[1]} - TxTs website"
-				titled_header="${header//$&title&$/$title}"
+				finished_header="${finished_header//$&title&$/$title}"
+			fi
+			if [[ $comment =~ description:(.*) ]]; then
+				description="${BASH_REMATCH[1]}"
+				finished_header="${finished_header//$&description&$/$description}"
 			fi
 		done <<< "$properties"
 
-		echo "$titled_header$content$footer" > temp
+		echo "$finished_header$content$footer" > temp
 		install -D temp "${filename/#src/.out}"
 		rm temp
 	fi
