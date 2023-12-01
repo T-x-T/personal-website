@@ -18,7 +18,7 @@ for filename in src/* src/**/*; do
 
 		while read -r comment; do
 			if [[ $comment =~ title:(.*) ]]; then
-				title="${BASH_REMATCH[1]} - TxTs website"
+				title="${BASH_REMATCH[1]} - TxT's website"
 				finished_header="${finished_header//$&title&$/$title}"
 			fi
 			if [[ $comment =~ description:(.*) ]]; then
