@@ -27,6 +27,7 @@ footer {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	margin-bottom: 25px;
 }
 
 nav > a {
@@ -51,4 +52,5 @@ main {
 	margin: 25px auto 25px auto;
 	max-width: 1200px;
 	padding: 10px;
+	line-height: 1.6;
 }
