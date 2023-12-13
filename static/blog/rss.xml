@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>TxT's Blog</title>
+  <link>https://thetxt.io/blog</link>
+  <description>This is my little blog where I write about everything that comes to my mind.</description>
+  <item>
+    <title>My gaming PC is a VM</title>
+    <link>https://thetxt.io/blog/2023-11-29-my-gaming-pc-is-a-vm</link>
+    <description>This blog post explains how I came to build a server running Proxmox for virtualizing my NAS and Gaming PC on a single physical machine</description>
+		<pubDate>2023-12-01</pubDate>
+  </item>
+</channel>
+
+</rss> 

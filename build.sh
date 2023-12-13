@@ -2,7 +2,7 @@
 rm -r .out
 mkdir .out
 
-cp static/* .out/
+cp -r static/* .out/
 
 header=$(cat src/#header.html)
 footer=$(cat src/#footer.html)
