@@ -54,3 +54,7 @@ main {
 	padding: 10px;
 	line-height: 1.6;
 }
+
+li {
+	margin-left: 2em;
+}

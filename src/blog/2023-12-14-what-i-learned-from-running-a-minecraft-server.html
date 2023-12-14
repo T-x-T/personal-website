@@ -1,0 +1,116 @@
+<!-- $&title:What I learned from running a public Minecraft server&$ -->
+<!-- $&description:I not only gained lots of technical knowledge when I ran a vanilla survival Minecraft server for multiple years!&$ -->
+<article>
+	<h2>What I learned from running a public Minecraft server</h2>
+	<p style="text-align: center;">Published on <b>2023-12-14</b>; Last edited on <b>2023-12-14</b></p>
+	<p style="text-align: center;">Tags: <b><a href="index.html#server">Server, <a href="index.html#coding">Coding</a></b></p>
+	<p style="text-align: center;">Contact me at <b><a href="mailto:blog@thetxt.io">blog@thetxt.io</a></b></p>
+
+	<br>
+	<p>First, let me set the scene. It's a beautiful summer in 2019 and you, together with your best friend, dream about reopening a survival Minecraft server you ran together for a few months two years prior.</p>
+	<p>Last time you stumbled into this whole thing out of spite (long story), but this time you are determined to build something great! And thus <a href="https://paxterya.com" target="_blank">Paxterya</a> is reborn.</p>
+	<p>At the time I also finished my apprenticeship that thought me a lot about the IT world and started working full time, so I not only had the knowledge, but also the money to build something decent.</p>
+	<p>While I went down the sysadmin route, I still learned the basics of programming and I wanted to use that knowledge to make the Minecraft server special.</p>
+	<p>
+		This resulted in a nodejs app that served as a discord bot and website as well as a Minecraft plugin later on.
+		Some of the things I built over the span of Paxteryas existence include an application form that could automatically whitelist players on the server after a moderator accepted their application and a function that scraped Minecraft player stats.
+	</p>
+	<p>
+		Paxterya ran for seven seasons, one of which 2 years before everything I write about in this post.
+		At its peak it had over 300 members with a concurrent player record in the 60s I believe. However, that record was hit during the launch of a new season, the average player count was much lower.
+		There was also a creative server and a few seasons of several modpacks running in parallel to the regular vanilla server.
+	</p>
+	<p>Now that I got you up to speed I can get into the first topic.</p>
+	<br>
+	<h3>Moderation & Personal growth</h3>
+	<p>
+		Back when we started running Paxterya again I was 19 and still pretty stupid. Way too much of my time back then was wasted scrolling through Reddit and looking at stupid memes. I did not understand that words can hurt, but more on that later.
+		Of course one massive, if not the largest, challenge of running a Minecraft server like we did it is moderation. The minimum age on Paxterya was 13 years, so we certainly had a bit of teenage drama here and there.
+		If I would ever run a Minecraft server again, then I probably would limit the minimum age to 18 or 16. Although I also don't think thats fair either, because we would have missed out on lots of great members with such a restrictive age limit.
+		On the other hand it would have considerably reduced the amount of pointless moderation work.
+		Active moderation is also important as Exxplore and I learned the hard way when our server got griefed while we were both asleep. Meanwhile our members from other timezones could only watch as their hard work got destroyed.
+		<i>Side note: I don't understand the motivation behind griefing, as it takes less time to undo that damage than it does to cause it.</i>
+		Afterwards we started the first round of applications for moderators.
+		Im not sure how a perfect moderator looks like, but what I think matters a lot is being trusted by the community and being able to find the right punishments to set rule breakers straight, or if that doesn't work excluding them from the community. 
+	</p>
+	<p>
+		Back to the whole personal growth thing. Looking back I wasn't accepting and understanding the needs of all our members, especially those of the LGBTQ+ community.
+		The beautiful thing about Minecraft is that it doesn't matter who or what you are. All that matters is that everyone has fun.
+		Based on that I should have taken better action against those who caused others to have less fun than they should have had, just because they were, and often still are, viewed as different by our society.
+		Looking back I'm very grateful for developing my current viewpoints thanks to the many interactions I had with the members of our community.
+	</p>
+	<br>
+	<h3>Software development</h3>
+	<p>The software I created for Paxterya was the first of mine that ever got put into something resembling a production environment.</p>
+	<p>
+		One of the things I'm very happy about is that I chose to use Github for managing the source code right from the start. It not only made things easier back then, it also allows us to take a look at the <a href="https://github.com/t-x-t/txt-bot-and-server" target="_blank">repository</a> today.
+		Look at that <a href="https://github.com/T-x-T/txt-bot-and-server/blob/2e6cd747053c1a5beddd556b92430c5f73e23027/lib/application.js" target="_blank">beautiful nesting!</a>
+	</p>
+	<p>
+		It's of course difficult to say what I learned over the course of this project, because I basically started from zero. One thing I can say however, is that it was extremely valuable that others used it and that I had an actual need for it.
+		When you're building stuff you don't actually have a need for its much harder to find motivation to push through hard problems. Solving these hard problems is the only way for you to actually get better. 
+	</p>
+	<p>
+		At first the website was handcrafted by Exxplore using beautiful raw HTML and I made it smart by doing string interpolation on the HTML files in the <a href="https://github.com/T-x-T/txt-bot-and-server/blob/2e6cd747053c1a5beddd556b92430c5f73e23027/web/webServer.js" target="_blank">web server</a> I created in nodejs.
+		Trying to make the frontend smarter, I started implementing my own little <a href="https://github.com/T-x-T/txt-bot-and-server/blob/aa8b20af97a72e7bc68e05849622822460baa0cf/web/web/assets/pax_js/framework.js" target="_blank"> javascript framework</a>.
+		Later I introduced <a href="https://github.com/T-x-T/txt-bot-and-server/blob/c67305057e1379525eb069fcff53bd121a337213/web/web/assets/react_js/react_members.js" target="_blank">a little bit of react</a> into the codebase, because I realized that writing your own frontend isn't the best use of my limited sanity.
+		Then I heard about vue.js and nuxt.js and I knew immediately that I liked their way of doing things so much more than react. With the single file components of vue you can put your related html, css and javascript into a single place.
+		It also feels more like adding additional functionality to HTML instead of constructing HTML from javascript which I enjoy a lot more. Since then I stuck to using nuxt for all my frontend needs and I'm still quite happy with it.
+	</p>
+	<p>
+		What that experience of building my own little framework and then trying some real ones has taught me is that you can actually get quite far without needing massive amounts of javascript. It was this experience that brought me to building this very blog using just basic HTML, but more on that in another post.
+		For building actual "webapps" frameworks are making your life easier. Nuxt is probably not the best anymore, but I'm very used to it which makes me quite productive using it. Thats why I will probably stick to using it for my projects that require more than basic HTML.  
+	</p>
+	<p>
+		On the backend I also had a little journey. There I started with javascript using callbacks. Later I learned about the future in the form of promises together with async/await.
+		I had a lot of issues with my code randomly crashing at runtime because things were null where they weren't supposed to, or objects had missing properties, etc. This caused me to spend a lot of time upgrading my garbage code to typescript.
+		It was still garbage afterwards, but at least I caught more basic issues before deploying new changes.
+		Experiencing that self inflicted javascript hell, was probably the main cause for me falling in love with rust later on.
+	</p>
+	<p>
+		Speaking of deployment, I started off using <a href="https://pm2.io/" target="_blank">pm2</a> to run my code on a vps in the cloud. Later on I switched to docker, but more about that in the server section of this post.
+	</p>
+	<p>
+		There was also a <a href="https://github.com/T-x-T/paxteryaPlugin" target="_blank">Minecraft plugin</a> I started, but got most of its cool features later on thanks to contributions of a valuable community member.
+		One of the features was an automatic sync of discord roles to minecraft. This allowed for stuff like name prefixes for staff members and also to give custom permissions to moderators and admins.
+		There I learned about the importance of fallbacks, because the plugin always asked my nodejs server for the roles every time a player joined the server. This worked great until my nodejs broke a few times, leaving moderators without their important permissions. oops.
+	</p>
+	<br>
+	<h3>Server/Hosting</h3>
+	<p>
+		After having troubles with different Minecraft server hosting companies back in 2017, I decided to do everything myself. I first started with a VPS running linux, but quickly discovered that it wasn't powerful enough for running modern versions of Minecraft.
+		A quick upgrade to a dedicated server with the high end hardware of the time (an Intel i7 6700k) later and performance was at least manageable. Over the years there were many hardware upgrades until we peaked at an AMD Ryzen 5950x.
+		It was definitely fun to have an excuse to play around with that high performance, dedicated server stuff. This got quite expensive when I had the idea to rent a separate storage server and got both relocated to be able to connect them directly with an ethernet cable in the datacenter.
+		At least then we had enough space for backups! Later we went back down to an AMD Ryzen 3600 equipped system, which was <i>fine</i> and much more cost effective.
+	</p>
+	<p>
+		I won't go much into the particular server jars I used to run the server. Its a <i>very</i> complicated topic with projects out there being forks of forks that are based on the forks of more forks. We used <a href="https://papermc.io/" target="_blank">papermc</a> which is fine.
+		There was always one innovation I was hoping for and thats proper multithreading by having multiple threads update different regions of the world in parallel. That would finally allow Minecraft servers to properly utilize modern CPUs and thus increase performance a lot. But at the end of 2023 we are still waiting. 
+	</p>
+	<p>
+		Much more interesting is probably the choice of game hosting platform. By that I mean the software that actually runs the Minecraft server. You could just run the server jar directly, but having access to a nice web based console is nice.
+		Thats especially helpful for managing your server on the go from your phone.
+		At first I used <a href="https://www.multicraft.org/" target="_blank">multicraft</a> which is also used by lots of Minecraft server hosting companies. It's not free if you have more than 10 players and actually charges you for the numbers of servers you want to run.
+		I don't know how to best put it, but it also feels like it's sometimes abstracting too many things away.
+	</p>
+	<p>
+		When I learned about Docker and decided I want to utilize it to run more servers and also other things, like our software I mentioned earlier, on a single physical machine, it became clear that multicraft had to go.
+		Instead I found a new exciting piece of software: <a href="https://pterodactyl.io/" target="_blank">Pterodactyl</a>. It uses Docker to run individual game servers in their separate containers which also allowed me to run some servers for others in a secure way.
+		I really grew to love it and would use it again if I ever had the need to run game servers again. 
+	</p>
+	<br>
+	<h3>Conclusion</h3>
+	<p>Running Paxterya helped me learn a lot about software development, servers, hosting, linux and also gave me insights and valuable lessons that helped me grow a lot as a person.</p>
+	<p>I still probably won't be doing something like it again, because it just takes a lot of time that I could use to learn and try new things.</p>
+	<p>If you still want to run a Minecraft server like we did I have some recommendations for you:
+		<ul>
+			<li>Build a strong community by keeping bad guys out</li>
+			<li>Grow a small team of trusted moderators (too many moderators probably is also a bad idea)</li>
+			<li>Programming custom functionality is a great way to get into coding</li>
+			<li>If you self-host, ensure you have a valid backup strategy</li>
+			<li>Use <a href="https://docs.papermc.io/paper/aikars-flags" target="_blank">aikars flags</a> for better performance</li>
+			<li><b>Ensure everyone, including yourself, has fun!</b></li>
+		</ul>
+	</p>
+	<p>I could write a lot more about my experience running a Minecraft server, but I feel like this post is already getting long enough. If you want to read more about something specific, please let me know at <a href="mailto:blog@thetxt.io">blog@thetxt.io</a>.</p>
+</article>
