@@ -1,0 +1,38 @@
+<!-- $&title:Dukatia Version 0.21.0 Changelog&$ -->
+<!-- $&description:Version 0.21.0 brings more improvements and fixes on the way to the 1.0.0 release.&$ -->
+<article>
+	<h2>Dukatia Version 0.21.0 Changelog</h2>
+	<p style="text-align: center;">Published on <b>2024-09-11</b>; Last edited on <b>2024-09-11</b></p>
+	<p style="text-align: center;">Tags: <b><a href="index.html#dukatia">Dukatia</a></b></p>
+	<p style="text-align: center;">Contact me at <b><a href="mailto:blog@thetxt.io">blog@thetxt.io</a></b></p>
+	<br>
+
+	<p>Hello there!<br />
+	This update is another milestone towards 1.0. It took me a while, because it was summer ;)  <br />
+	Now I can finally focus on getting the publicly accessible demo finished. </p>
+	<h2 id="updating">Updating</h2>
+	<p>Updating to this new release should be as simple as pulling the new docker images, if you are using the main tag.</p>
+	<h2 id="changes">Changes</h2>
+	<p>Starting with this version you can use a different postgres User. This means that the <a href="https://dukatia.com/docs/admin/configuration">configuration documentation</a> is now actually correct.<br />
+	All the issues closed can be found on Github in the <a href="https://github.com/T-x-T/dukatia/milestone/14?closed=1">0.21.0 milestone</a>.</p>
+	<h3 id="enhancements">Enhancements</h3>
+	<ul>
+	<li>Use tags of positions instead of the entire transaction tags chart, if set <a href="https://github.com/T-x-T/dukatia/issues/52">#52</a></li>
+	<li>allow setting recipient for asset transaction creation <a href="https://github.com/T-x-T/dukatia/issues/96">#96</a></li>
+	</ul>
+	<h3 id="bug-fixes">Bug fixes</h3>
+	<ul>
+	<li>respect POSTGRES_USER env variable in sql scripts <a href="https://github.com/T-x-T/dukatia/issues/89">#89</a></li>
+	<li>users table on settings page is way tooooo wide <a href="https://github.com/T-x-T/dukatia/issues/92">#92</a></li>
+	<li>fix insert_demo_data endpoint <a href="https://github.com/T-x-T/dukatia/issues/93">#93</a></li>
+	<li>add chart button doesn't add new chart <a href="https://github.com/T-x-T/dukatia/pull/100/commits/6e1d24213681aa582f6d7eef6c9e754b40cc8473">6e1d242</a></li>
+	<li>wrong currency symbol displayed when adding new position in transaction form <a href="https://github.com/T-x-T/dukatia/issues/95">#95</a></li>
+	</ul>
+	<h3 id="refactor">Refactor</h3>
+	<ul>
+	<li>change accessToken cookie name to access_token <a href="https://github.com/T-x-T/dukatia/issues/86">#86</a></li>
+	<li>charts backend to use enums and clean things up <a href="https://github.com/T-x-T/dukatia/pull/100/commits/6e1d24213681aa582f6d7eef6c9e754b40cc8473">6e1d242</a> <a href="https://github.com/T-x-T/dukatia/pull/100/commits/fc6934fc37663727f06fa17241a7abf8733c1077">fc6934f</a></li>
+	</ul>
+	<h2 id="road-to-100">Road to 1.0.0</h2>
+	<p>1.0.0 gets closer every week. Next on my list is setting up the public demo server and then I just have a little more work to do on the website to make it ready. A few minor improvements and bug fixes are also coming in more minor patch releases.</p>
+</article>
