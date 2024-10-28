@@ -46,5 +46,11 @@
 			<description>Version 0.21.4 brings more improvements and fixes on the way to the 1.0.0 release.</description>
 			<pubDate>2024-10-19</pubDate>
 		</item>
+		<item>
+			<title>Dukatia just went 1.0.0</title>
+			<link>https://thetxt.io/blog/2024-10-28-dukatia-version-1.0.0-changelog</link>
+			<description>After 3 years of development, Dukatia finally reached version 1.0.0</description>
+			<pubDate>2024-10-28</pubDate>
+		</item>
 	</channel>
 </rss> 
