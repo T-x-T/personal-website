@@ -11,7 +11,9 @@
   	<p>Over the past year I worked a lot more on my Minecraft server that Im building from scratch entirely in Rust. Now I felt comfortable to release a first version you can try yourself!
     This post is also available in <a href="https://youtu.be/z4tAE1xLB3o">video form</a></p>
     <p>You can find the code over on my <a href="https://git.thetxt.io/thetxt/oxide">forgejo instance</a></p>
+    <br>
     <h2 id="what-is-oxide-">What is Oxide?</h2>
+    <br>
     <h3 id="currently-supported-features">Currently supported features</h3>
     <p>Of course, Oxide isn&#39;t exactly a drop in replacement for the vanilla Minecraft server just yet, so lets take a quick look at whats already working.</p>
     <p>The most important feature for any multiplayer server is that multiple players can play at once, which already works reasonably well. Everyone can even see the armor and held item of others!</p>
@@ -19,52 +21,66 @@
     <p>Placing and breaking blocks also works. At least until you try to do complicated stuff like placing two fences right next to each other. Yeah, Minecraft has a lot of rules about which state of a particular block has to get placed in which scenario.</p>
     <p>Some of those rules are already working though, for example for the different directions logs can be placed in and for doors where two blocks have to get created. Slabs also work correctly and stairs almost do. Who needs curved stairs anyways?</p>
     <p>The one feature Im most proud of is loading and saving of vanilla worlds. This actually works so well that you can load a world, place some blocks and then load the modified world in vanilla again, without any problems! Still, please always make backups before you let Oxide loose on your precious worlds.</p>
-    <h3 id="why-">Why?</h3>
+    <br>
+    <h3 id="why-am-i-doing-this-">Why am I doing this?</h3>
     <p>Thats nice and all, but there are still a lot of important features missing after many months of working on this project, so the obvious question is &quot;why do all this?&quot;.</p>
     <p>The answer is simple: &quot;Because I want to get better at programming&quot;. And its also interesting enough to make lots of educational videos about.</p>
-    <h3 id="and-why-rust-">And why rust?</h3>
+    <br>
+    <h3 id="and-why-in-rust-">And why in Rust?</h3>
     <p>My choice of programming language also might not be that obvious if you aren&#39;t part of the Rust cult.</p>
     <p>The vanilla Minecraft server is written in Java, so you may be wondering why I chose to use rust instead. The answer is pretty simple, it&#39;s because I like it and because I want to get better at it.</p>
     <p>The less boring answer would be that it&#39;s easier to write high performance code with it and that its focus on correctness helps writing programs that contain fewer bugs and crash less often.</p>
     <p>There is also a big difference in how the two languages manage memory. Java has a garbage collector that automagically cleans up unused memory, which is fine for most programs but can cause some performance issues in memory intensive programs, like Minecraft.</p>
     <p>Rust also essentially manages memory for you, but it can do it ahead of time during compilation instead of at runtime. This is a true superpower thats made possible by its ownership model. </p>
     <p>Through it, Rust keeps track of who owns and borrows which variable at what time and then can insert the right code to clean up when it knows that no one can access the variable anymore. At least thats the highly simplified explanation. Please let me know if I should make a video diving deeper, although plenty of those already exist on the internet.</p>
+    <br>
     <h3 id="how-is-this-even-possible-">How is this even possible?</h3>
     <p>If you haven&#39;t heard of similar projects you might be asking yourself how its even possible to program a whole Minecraft server from scratch.</p>
     <p>The Minecraft server and client talk over the network by exchanging packets of information. If we can write a server that receives and understands packets from clients and sends correct packets back, then the vanilla client can just connect without any issues.</p>
     <p>While some games like Factorio run basically the same game on the server just without the graphics and then synchronize all clients, the Minecraft client is quite dumb and just listens to the server for whats happening.</p>
     <p>To my knowledge, Mojang however doesn&#39;t publish what all these different kinds of packets are or what they do. Luckily the fine folks over at the <a href="https://minecraft.wiki/w/Java_Edition_protocol/Packets#Set_Equipment">minecraft wiki</a>, or formally on wiki.vg, figured it all out through reverse engineering.</p>
     <p>This means that we can mostly just look at the wiki to learn pretty much everything we need to know.</p>
+    <br>
     <h2 id="how-to-try-it-out">How to try it out</h2>
     <p>Okay, enough with all that, how can you actually play on Oxide, today?</p>
+    <br>
     <h3 id="public-server">Public server</h3>
     <p>If you just want to quickly experience Oxide for yourself then feel free to join my public server. You can just join it at play.oxide.thetxt.io. It always runs on the latest build from the main branch.</p>
+    <br>
     <h3 id="docker">Docker</h3>
     <p>If you want to run your own Oxide instance, then I would recommend using the <a href="https://git.thetxt.io/thetxt/oxide/src/branch/main/docker-compose.yml">docker compose yaml file</a> that sits at the root of the git repository. Everything you can configure is already present in that file. As you can see its pretty straight forward.</p>
+    <br>
     <h2 id="how-to-help">How to help</h2>
     <p>You already made it pretty far into this post, so you&#39;re probably wondering how you can help out?</p>
-    <h3 id="playing-and-testing">playing and testing</h3>
+    <br>
+    <h3 id="playing-and-testing">Playing and Testing</h3>
     <p>The most obvious way is to just use Oxide and play around. By inviting your friends too, you would be raising the awareness about this project which would be very helpful.</p>
-    <h3 id="reporting-bugs-suggesting-features">reporting bugs / suggesting features</h3>
+    <br>
+    <h3 id="reporting-bugs-suggesting-features">Reporting bugs &amp; Suggesting features</h3>
     <p>Also you are probably going to find a lot of little bugs that you should report back on the <a href="https://git.thetxt.io/thetxt/oxide/issues">issue tracker</a>.</p>
     <p>I am also looking forward to hearing your feature suggestions. This can be anything from gameplay features you like to see prioritized to commands you always wish existed.</p>
     <p>As you probably now realized, the link to the Oxide repository doesn&#39;t point to GitHub anymore! While you can still find it there, the main location is now on my own  <a href="https://git.thetxt.io/thetxt/oxide">forgejo instance</a>. Please submit bug reports and feature suggestions there as an issue.</p>
     <p>You can just use your GitHub or Discord account to <a href="https://git.thetxt.io/user/sign_up">register for an account there</a>, so you don&#39;t have to remember yet another password.</p>
-    <h3 id="not-contributing-code">not contributing code</h3>
+    <br>
+    <h3 id="not-by-contributing-code">Not by contributing code</h3>
     <p>While the code is all open source Im not actually looking for code contributions at the moment. Thats because I have to fully understand everything to then make videos about it. If I don&#39;t write it myself, I can&#39;t build that full understanding.</p>
     <p>You&#39;re still welcome to fork my project and develop features for it as you see fit, just please don&#39;t be sad if I don&#39;t merge them back into Oxide.</p>
     <p>I expect this to somewhat change in the future, when I may look for specific contributions. In that case I will announce that in a video on <a href="https://www.youtube.com/@TheTxT">my channel</a> though, so get subscribed?</p>
-    <h3 id="donating">donating</h3>
+    <br>
+    <h3 id="donating">Donating</h3>
     <p>Should you have the problem of just having too much money, then you&#39;re also welcome to <a href="https://buymeacoffee.com/thetxt?status=1">donate</a> some!</p>
     <p>This would help me pay the server bills and who knows, maybe I can reduce the hours I work at my day job in the future too, so I have more time to dedicate to Oxide and making videos. Yeah I know, but a man can dream, right?</p>
+    <br>
     <h2 id="future-plans">Future plans</h2>
     <p>The last thing to talk about is the future! Let&#39;s look at the next couple of things that I want to implement.</p>
+    <br>
     <h3 id="planned-features">Planned features</h3>
     <p>The next big feature will be block entities. Those are blocks like chests or furnaces. This would include their special inventories and maybe already some functionality like smelting.</p>
     <p>Maybe I can also finally make doors actually work? Just kidding of course, because doors are obviously alien science. </p>
     <p>After that I will probably look into entities. Those are your creepers, sheep and so on. Building their AI and behaviors is gonna be interesting.</p>
     <p>Some other things Im already thinking about include Survival mode, support for multiple dimensions and online mode login. I also want to implement all the different block state rules I talked about earlier at some point.</p>
-    <h3 id="end-goal-non-goals">end goal/non goals</h3>
+    <br>
+    <h3 id="end-goal-non-goals">End goal &amp; Non goals</h3>
     <p>In the far future I would of course like Oxide to be a mostly drop in replacement for the vanilla Minecraft server. Although some features like world generation will never be on the same level.</p>
     <p>I also have multiple ideas for implementing certain things differently, like storing the world in a database instead of in files on disk. But I don&#39;t want to spoil too much.</p>
     <p>Thanks for reading, I hope you enjoy Oxide, even in its current, janky, form :)</p>
