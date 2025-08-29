@@ -1,56 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
-	<channel>
-		<title>TxT's Blog</title>
-		<link>https://thetxt.io/blog</link>
-		<description>This is my little blog where I write about everything that comes to my mind.</description>
-		<item>
-			<title>My gaming PC is a VM</title>
-			<link>https://thetxt.io/blog/2023-11-29-my-gaming-pc-is-a-vm</link>
-			<description>This blog post explains how I came to build a server running Proxmox for virtualizing my NAS and Gaming PC on a single physical machine</description>
-			<pubDate>2023-12-01</pubDate>
-		</item>
-		<item>
-			<title>What I learned from running a public Minecraft server</title>
-			<link>https://thetxt.io/blog/2023-12-14-what-i-learned-from-running-a-minecraft-server</link>
-			<description>I not only gained lots of technical knowledge when I ran a vanilla survival Minecraft server for multiple years!</description>
-			<pubDate>2023-12-14</pubDate>
-		</item>
-		<item>
-			<title>Dukatia Version 0.20.1 Changelog</title>
-			<link>https://thetxt.io/blog/2024-07-07-dukatia-version-0.20.1-changelog</link>
-			<description>Version 0.20.1 is just a minor patch release containing a couple of fixes, mostly around UI problems in the frontend.</description>
-			<pubDate>2024-07-07</pubDate>
-		</item>
-		<item>
-			<title>Dukatia Version 0.21.0 Changelog</title>
-			<link>https://thetxt.io/blog/2024-09-11-dukatia-version-0.21.0-changelog</link>
-			<description>Version 0.21.0 brings more improvements and fixes on the way to the 1.0.0 release.</description>
-			<pubDate>2024-09-11</pubDate>
-		</item>
-		<item>
-			<title>Dukatia Version 0.21.1 Changelog</title>
-			<link>https://thetxt.io/blog/2024-09-20-dukatia-version-0.21.1-changelog</link>
-			<description>Version 0.21.1 brings more improvements and fixes on the way to the 1.0.0 release.</description>
-			<pubDate>2024-09-20</pubDate>
-		</item>
-		<item>
-			<title>Dukatia Version 0.21.2 Changelog</title>
-			<link>https://thetxt.io/blog/2024-10-04-dukatia-version-0.21.2-changelog</link>
-			<description>Version 0.21.2 brings more improvements and fixes on the way to the 1.0.0 release.</description>
-			<pubDate>2024-10-04</pubDate>
-		</item>
-		<item>
-			<title>Dukatia Version 0.21.4 Changelog</title>
-			<link>https://thetxt.io/blog/2024-10-19-dukatia-version-0.21.4-changelog</link>
-			<description>Version 0.21.4 brings more improvements and fixes on the way to the 1.0.0 release.</description>
-			<pubDate>2024-10-19</pubDate>
-		</item>
-		<item>
-			<title>Dukatia just went 1.0.0</title>
-			<link>https://thetxt.io/blog/2024-10-28-dukatia-version-1.0.0-changelog</link>
-			<description>After 3 years of development, Dukatia finally reached version 1.0.0</description>
-			<pubDate>2024-10-28</pubDate>
-		</item>
-	</channel>
-</rss> 
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>TxT's Blog</title>
+	<link href="https://thetxt.io/blog"/>
+	<updated>2024-10-28T00:00:00Z</updated>
+	<id>urn:uuid:a1a3636f-603f-40f8-8166-cd0de1123390</id>
+	<author>
+	  <name>TheTxt</name>
+		<email>blog@thetxt.io</email>
+	</author>
+	<entry>
+		<title>My gaming PC is a VM</title>
+		<link href="https://thetxt.io/blog/2023-11-29-my-gaming-pc-is-a-vm"/>
+		<id>urn:uuid:93b59a13-e6a8-4248-be03-810f55c4d4a0</id>
+		<summary>This blog post explains how I came to build a server running Proxmox for virtualizing my NAS and Gaming PC on a single physical machine</summary>
+		<updated>2023-12-01T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>What I learned from running a public Minecraft server</title>
+		<link href="https://thetxt.io/blog/2023-12-14-what-i-learned-from-running-a-minecraft-server"/>
+		<id>urn:uuid:876a3012-91ea-4578-9595-44d5206f1999</id>
+		<summary>I not only gained lots of technical knowledge when I ran a vanilla survival Minecraft server for multiple years!</summary>
+		<updated>2023-12-14T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>Dukatia Version 0.20.1 Changelog</title>
+		<link href="https://thetxt.io/blog/2024-07-07-dukatia-version-0.20.1-changelog"/>
+		<id>urn:uuid:48eec457-91b3-4cda-aafd-95cb869a0129</id>
+		<summary>Version 0.20.1 is just a minor patch release containing a couple of fixes, mostly around UI problems in the frontend.</summary>
+		<updated>2024-07-07T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>Dukatia Version 0.21.0 Changelog</title>
+		<link href="https://thetxt.io/blog/2024-09-11-dukatia-version-0.21.0-changelog"/>
+		<id>urn:uuid:51d805f2-3a5b-484a-9517-49f9269a3687</id>
+		<summary>Version 0.21.0 brings more improvements and fixes on the way to the 1.0.0 release.</summary>
+		<updated>2024-09-11T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>Dukatia Version 0.21.1 Changelog</title>
+		<link href="https://thetxt.io/blog/2024-09-20-dukatia-version-0.21.1-changelog"/>
+		<id>urn:uuid:49dd257e-fe00-42d1-b68c-c41d9ee897d6</id>
+		<summary>Version 0.21.1 brings more improvements and fixes on the way to the 1.0.0 release.</summary>
+		<updated>2024-09-20T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>Dukatia Version 0.21.2 Changelog</title>
+		<link href="https://thetxt.io/blog/2024-10-04-dukatia-version-0.21.2-changelog"/>
+		<id>urn:uuid:c6c971c5-e2ee-491d-a8fc-a2929052e63b</id>
+		<summary>Version 0.21.2 brings more improvements and fixes on the way to the 1.0.0 release.</summary>
+		<updated>2024-10-04T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>Dukatia Version 0.21.4 Changelog</title>
+		<link href="https://thetxt.io/blog/2024-10-19-dukatia-version-0.21.4-changelog"/>
+		<id>urn:uuid:755e867b-cdcc-4937-9062-0e9ae71cf581</id>
+		<summary>Version 0.21.4 brings more improvements and fixes on the way to the 1.0.0 release.</summary>
+		<updated>2024-10-19T00:00:00Z</updated>
+	</entry>
+	<entry>
+		<title>Dukatia just went 1.0.0</title>
+		<link href="https://thetxt.io/blog/2024-10-28-dukatia-version-1.0.0-changelog"/>
+		<id>urn:uuid:cb6d2965-4a85-4ce3-9ab8-ff1d414bb6e2</id>
+		<summary>After 3 years of development, Dukatia finally reached version 1.0.0</summary>
+		<updated>2024-10-28T00:00:00Z</updated>
+	</entry>
+</feed>
